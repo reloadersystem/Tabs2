@@ -6,8 +6,10 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.TableLayout;
-import android.widget.Toolbar;
+
+import android.support.design.widget.TabLayout;
+import android.support.v7.widget.Toolbar;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,12 +18,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar=(Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        TableLayout tabLayout=(TableLayout) findViewById(R.id.tabs);
-        ViewPager viewPager=(ViewPager) findViewById(R.id.pager);
+        TabLayout tabLayout= (TabLayout)findViewById(R.id.tabs);
+        ViewPager viewPager=findViewById(R.id.pager);
 
         viewPager.setAdapter(new SectionPageAdapter(getSupportFragmentManager()));
         tabLayout.setupWithViewPager(viewPager);
